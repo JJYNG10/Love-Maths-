@@ -114,8 +114,13 @@ function displayMultiplyQuestion(operand1,operand2){
 }
 
 function displayDivisionQuestion(operand1,operand2){
-    document.getElementById('operand1').textContent = operand1;
-    document.getElementById('operand2').textContent = operand2;
+
+   let divisor = Math.floor(Math.random()*12)+1;
+   let equotient = Math.floor(Math.random()*12)+1;
+   let dividend  = divisor * equotient;
+
+    document.getElementById('operand1').textContent = dividend;
+    document.getElementById('operand2').textContent = divisor;
     document.getElementById('operator').textContent = "/";
 }
 
