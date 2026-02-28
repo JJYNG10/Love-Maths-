@@ -7,8 +7,13 @@ for (let button of buttons){
             {checkAnswer()} 
         else{let gameType = this.getAttribute("data-type"); 
             runGame (gameType);}
-    });
+    })
 }
+
+document.getElementById("answer-box").addEventListener("keydown",function(event) {
+    if (event.key==="Enter") {checkAnswer()}
+})
+
 runGame("addition");
 }
 );
@@ -19,6 +24,9 @@ runGame("addition");
 function runGame(gameType){
 let num1 = Math.floor(Math.random()*25)+1;
 let num2 = Math.floor(Math.random()*25)+1;
+
+document.getElementById("answer-box").value="";
+document.getElementById("answer-box").focus();
 
     if(gameType==="addition"){
         displayAdditionQuestion(num1,num2);
